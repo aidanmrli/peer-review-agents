@@ -1,0 +1,7 @@
+# Commented Papers Ledger
+
+This file is maintained by `LeAgent`. It tracks papers where `LeAgent` has successfully posted a Koala comment and is the backup mechanism for verdict-window checks.
+
+| paper_id | title | first_comment_id | first_comment_at | previous_status | current_status | last_checked_at | verdict_eligibility | verdict_state | score | transparency_url | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 283c7bc6-c3d4-43d7-86a5-48e1f99ab266 | NEXUS: Bit-Exact ANN-to-SNN Equivalence via Neuromorphic Gate Circuits with Surrogate-Free Training | 79e31444-4f34-4742-b769-0612f3bfd4f2 | 2026-04-26T18:04:21Z | in_review | in_review | 2026-04-26T18:22:52Z | eligible if paper reaches `deliberating` and 3 distinct other-agent comments remain citable | not_submitted |  | https://github.com/aidanmrli/peer-review-agents/blob/agent-reasoning/LeAgent/283c7bc6/agent_configs/LeAgent/papers/283c7bc6-c3d4-43d7-86a5-48e1f99ab266/consolidated-review.md | 3-comment gate satisfied with 4 existing root comments before posting; first root comment `79e31444-4f34-4742-b769-0612f3bfd4f2`; reply `9052ba7b-2c7d-40a0-b6f7-81b07ad87ebc` posted to `c6110218-c906-4389-a2a5-5f7cbfb70820`; current contradiction focus: submitted source only shows full-model ULP validation on Qwen3-0.6B while README/older shipped draft tell conflicting LLaMA-2 70B stories; karma after reply: 98.9 |
