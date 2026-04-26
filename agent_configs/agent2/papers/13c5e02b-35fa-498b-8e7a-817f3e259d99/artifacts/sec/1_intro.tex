@@ -1,0 +1,32 @@
+\section{Introduction}
+\label{sec:intro}
+
+Reliable planning in autonomous driving hinges on a comprehensive understanding of the physical world—one that captures not only the visual appearance of a scene, but also its underlying geometry and dynamic evolution over time. Recent advances in autonomous driving \cite{hu2023planning, jiang2023vad, chen2024vadv2, liao2025diffusiondrive, liu2025gaussianfusion} have made substantial progress by reformulating the traditional perception–prediction–planning pipeline into an end-to-end paradigm, thereby mitigating error accumulation across stages. To learn representations that jointly encode appearance, geometry, and scene dynamics, these approaches, however, still heavily depend on costly perception annotations, which limit the scalability.
+
+Humans make driving decisions by mentally simulating the evolving world—anticipating the future states of surrounding agents, objects, and the ego vehicle according to limited observations. This process implicitly builds a coherent world model that tightly couples visual perception, spatial reasoning, and action planning within a unified framework. Motivated by this observation, we posit that autonomous agents should be equipped with a unified driving world model capable of jointly reconstructing and forecasting the 4D world state from partial observations, such as multi-view visual inputs. Such a formulation naturally lends itself to self-supervised learning, where latent world representations inferred from limited sensory inputs can be leveraged to recover unobserved information, including scene geometry and future world dynamics.
+
+Learning a unified driving world model solely from visual observations presents several fundamental challenges. First, establishing \textbf{\emph{spatio--temporal coherence}} is crucial for modeling realistic dynamics. The latent representation must not only encode per-frame spatial structures but also preserve temporal continuity, faithfully reflecting how scenes and agents evolve over time under causal motion. Second, there exists a \textbf{\emph{lack of theoretical guidance}} for learning unified driving world models. Most existing methods \cite{epona, vggt, liu2025gaussianfusion} are based on heuristic designs, with limited understanding of which principles are essential for jointly modeling the dynamic physical world, thereby hindering systematic improvement and generalization.
+
+To tackle these challenges, we propose \textbf{UniDWM}, a unified driving world model that learns a structure- and dynamic-aware latent world representation serving as a physically grounded state space. This representation enables coherent reasoning across perception, prediction, and planning. As illustrated in Figure~\ref{fig_framework}, UniDWM comprises two key components. First, a \textit{Joint Reconstruction} pathway reconstructs the scene structure---including geometry, visual appearance, and ego-motion---from sequential observations, yielding a unified latent world representation. Second, a \textit{Collaborative Generation} module leverages a conditional diffusion transformer (DiT) to predict future world evolution, thereby implicitly injecting dynamics-aware information into the latent space. Furthermore, we demonstrate that UniDWM can be formulated as a variant of a variational autoencoder (VAE)~\cite{kingma2014auto, zhao2017infovae}, providing theoretical grounding for its unified representation learning paradigm.
+
+Through comprehensive evaluations on NAVSIM, spanning trajectory planning, 4D reconstruction, and 4D generation, we show that UniDWM effectively unifies perception, prediction, and planning within a single latent space, yielding tangible benefits for planning. Our main contributions are summarized as follows:
+% \vspace{-0.5em}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item We propose UniDWM, a unified driving world model that learns a structure- and dynamic-aware latent representation as a physically grounded state space for perception, prediction, and planning.
+    \item We provide a theoretical interpretation of UniDWM as a variant of a variational autoencoder, offering principled guidance for multifaceted representation learning.
+    \item We evaluate UniDWM extensively on the NAVSIM benchmark across trajectory planning, 4D reconstruction, and 4D generation, demonstrating the effectiveness of our method.
+\end{itemize}
+
+% \vspace{-0.5em}
+% \begin{itemize}
+%     \setlength{\itemsep}{0pt}
+%     \setlength{\parskip}{0pt}
+%     \setlength{\parsep}{0pt}
+%     \item We propose UniDWM, a unified driving world model that learns a structure- and dynamic-aware latent representation as a physically grounded state space for perception, prediction, and planning.
+%     \item We provide a theoretical interpretation of UniDWM as a variant of a variational autoencoder, offering principled guidance for multifaceted representation learning.
+%     \item We evaluate UniDWM extensively on the NAVSIM benchmark across trajectory planning, 4D reconstruction, and 4D generation, demonstrating the effectiveness of our method.
+% \end{itemize}
+% \vspace{-0.5em}

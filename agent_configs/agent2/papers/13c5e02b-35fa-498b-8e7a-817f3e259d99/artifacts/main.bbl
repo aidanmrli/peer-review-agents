@@ -1,0 +1,243 @@
+\begin{thebibliography}{47}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Balestriero \& LeCun(2025)Balestriero and LeCun]{balestriero2025lejepa}
+Balestriero, R. and LeCun, Y.
+\newblock Lejepa: Provable and scalable self-supervised learning without the heuristics.
+\newblock \emph{arXiv preprint arXiv:2511.08544}, 2025.
+
+\bibitem[Bojarski et~al.(2016)Bojarski, Del~Testa, Dworakowski, Firner, Flepp, Goyal, Jackel, Monfort, Muller, Zhang, et~al.]{bojarski2016end}
+Bojarski, M., Del~Testa, D., Dworakowski, D., Firner, B., Flepp, B., Goyal, P., Jackel, L.~D., Monfort, M., Muller, U., Zhang, J., et~al.
+\newblock End to end learning for self-driving cars.
+\newblock \emph{arXiv preprint arXiv:1604.07316}, 2016.
+
+\bibitem[Chen et~al.(2025)Chen, Cai, Chen, Xie, Yang, Tang, Li, Lu, and Han]{dcae}
+Chen, J., Cai, H., Chen, J., Xie, E., Yang, S., Tang, H., Li, M., Lu, Y., and Han, S.
+\newblock Deep compression autoencoder for efficient high-resolution diffusion models.
+\newblock In \emph{ICLR}, 2025.
+
+\bibitem[Chen et~al.(2024)Chen, Jiang, Gao, Liao, Xu, Zhang, Huang, Liu, and Wang]{chen2024vadv2}
+Chen, S., Jiang, B., Gao, H., Liao, B., Xu, Q., Zhang, Q., Huang, C., Liu, W., and Wang, X.
+\newblock Vadv2: End-to-end vectorized autonomous driving via probabilistic planning.
+\newblock \emph{arXiv preprint arXiv:2402.13243}, 2024.
+
+\bibitem[Codevilla et~al.(2018)Codevilla, M{\"u}ller, L{\'o}pez, Koltun, and Dosovitskiy]{codevilla2018end}
+Codevilla, F., M{\"u}ller, M., L{\'o}pez, A., Koltun, V., and Dosovitskiy, A.
+\newblock End-to-end driving via conditional imitation learning.
+\newblock In \emph{ICRA}, 2018.
+
+\bibitem[Codevilla et~al.(2019)Codevilla, Santana, L{\'o}pez, and Gaidon]{codevilla2019exploring}
+Codevilla, F., Santana, E., L{\'o}pez, A.~M., and Gaidon, A.
+\newblock Exploring the limitations of behavior cloning for autonomous driving.
+\newblock In \emph{ICCV}, 2019.
+
+\bibitem[Dauner et~al.(2024)Dauner, Hallgarten, Li, Weng, Huang, Yang, Li, Gilitschenski, Ivanovic, Pavone, Geiger, and Chitta]{navsim}
+Dauner, D., Hallgarten, M., Li, T., Weng, X., Huang, Z., Yang, Z., Li, H., Gilitschenski, I., Ivanovic, B., Pavone, M., Geiger, A., and Chitta, K.
+\newblock Navsim: Data-driven non-reactive autonomous vehicle simulation and benchmarking.
+\newblock In \emph{NeurIPS}, 2024.
+
+\bibitem[Esser et~al.(2021)Esser, Rombach, and Ommer]{gan_loss}
+Esser, P., Rombach, R., and Ommer, B.
+\newblock Taming transformers for high-resolution image synthesis.
+\newblock In \emph{CVPR}, 2021.
+
+\bibitem[Gao et~al.(2025)Gao, Chen, Xiao, Hong, Li, and Xu]{magicdrivev2}
+Gao, R., Chen, K., Xiao, B., Hong, L., Li, Z., and Xu, Q.
+\newblock Magicdrive-v2: High-resolution long video generation for autonomous driving with adaptive control.
+\newblock In \emph{ICCV}, 2025.
+
+\bibitem[Gao et~al.(2024)Gao, Yang, Chen, Chitta, Qiu, Geiger, Zhang, and Li]{GaoVista2024}
+Gao, S., Yang, J., Chen, L., Chitta, K., Qiu, Y., Geiger, A., Zhang, J., and Li, H.
+\newblock Vista: A generalizable driving world model with high fidelity and versatile controllability.
+\newblock In \emph{NeurIPS}, 2024.
+
+\bibitem[Guo et~al.(2025)Guo, Wu, Xiong, Xu, Zhou, Xu, Xu, Sun, Wang, Chen, et~al.]{guo2025genesis}
+Guo, X., Wu, Z., Xiong, K., Xu, Z., Zhou, L., Xu, G., Xu, S., Sun, H., Wang, B., Chen, G., et~al.
+\newblock Genesis: Multimodal driving scene generation with spatio-temporal and cross-modal consistency.
+\newblock \emph{arXiv preprint arXiv:2506.07497}, 2025.
+
+\bibitem[Hu et~al.(2024)Hu, Yin, Jia, Deng, Guo, Zhang, Long, and Tan]{hu2024drivingworld}
+Hu, X., Yin, W., Jia, M., Deng, J., Guo, X., Zhang, Q., Long, X., and Tan, P.
+\newblock Drivingworld: Constructing world model for autonomous driving via video gpt.
+\newblock \emph{arXiv preprint arXiv:2412.19505}, 2024.
+
+\bibitem[Hu et~al.(2023)Hu, Yang, Chen, Li, Sima, Zhu, Chai, Du, Lin, Wang, et~al.]{hu2023planning}
+Hu, Y., Yang, J., Chen, L., Li, K., Sima, C., Zhu, X., Chai, S., Du, S., Lin, T., Wang, W., et~al.
+\newblock Planning-oriented autonomous driving.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Huang et~al.(2024)Huang, Zheng, Zhang, Zhou, and Lu]{huang2024gaussianformer}
+Huang, Y., Zheng, W., Zhang, Y., Zhou, J., and Lu, J.
+\newblock Gaussianformer: Scene as gaussians for vision-based 3d semantic occupancy prediction.
+\newblock In \emph{ECCV}, 2024.
+
+\bibitem[Jia et~al.(2023)Jia, Wu, Chen, Xie, He, Yan, and Li]{jia2023think}
+Jia, X., Wu, P., Chen, L., Xie, J., He, C., Yan, J., and Li, H.
+\newblock Think twice before driving: Towards scalable decoders for end-to-end autonomous driving.
+\newblock In \emph{CVPR}, 2023.
+
+\bibitem[Jia et~al.(2025)Jia, You, Zhang, and Yan]{jia2025drivetransformer}
+Jia, X., You, J., Zhang, Z., and Yan, J.
+\newblock Drivetransformer: Unified transformer for scalable end-to-end autonomous driving.
+\newblock In \emph{ICLR}, 2025.
+
+\bibitem[Jiang et~al.(2023)Jiang, Chen, Xu, Liao, Chen, Zhou, Zhang, Liu, Huang, and Wang]{jiang2023vad}
+Jiang, B., Chen, S., Xu, Q., Liao, B., Chen, J., Zhou, H., Zhang, Q., Liu, W., Huang, C., and Wang, X.
+\newblock Vad: Vectorized scene representation for efficient autonomous driving.
+\newblock In \emph{ICCV}, 2023.
+
+\bibitem[Kendall \& Cipolla(2016)Kendall and Cipolla]{kendall2016modelling}
+Kendall, A. and Cipolla, R.
+\newblock Modelling uncertainty in deep learning for camera relocalization.
+\newblock In \emph{ICRA}, 2016.
+
+\bibitem[Kerbl et~al.(2023)Kerbl, Kopanas, Leimk{\"u}hler, and Drettakis]{3dgs}
+Kerbl, B., Kopanas, G., Leimk{\"u}hler, T., and Drettakis, G.
+\newblock 3d gaussian splatting for real-time radiance field rendering.
+\newblock \emph{TOG}, 2023.
+
+\bibitem[Kerbl et~al.(2024)Kerbl, Meuleman, Kopanas, Wimmer, Lanvin, and Drettakis]{kerbl2024hierarchical}
+Kerbl, B., Meuleman, A., Kopanas, G., Wimmer, M., Lanvin, A., and Drettakis, G.
+\newblock A hierarchical 3d gaussian representation for real-time rendering of very large datasets.
+\newblock \emph{TOG}, 2024.
+
+\bibitem[Kingma \& Welling(2013)Kingma and Welling]{kingma2014auto}
+Kingma, D.~P. and Welling, M.
+\newblock Auto-encoding variational bayes.
+\newblock \emph{arXiv preprint arXiv:1312.6114}, 2013.
+
+\bibitem[Kong et~al.(2024)Kong, Tian, Zhang, Min, Dai, Zhou, Xiong, Li, Wu, Zhang, et~al.]{kong2024hunyuanvideo}
+Kong, W., Tian, Q., Zhang, Z., Min, R., Dai, Z., Zhou, J., Xiong, J., Li, X., Wu, B., Zhang, J., et~al.
+\newblock Hunyuanvideo: A systematic framework for large video generative models.
+\newblock \emph{arXiv preprint arXiv:2412.03603}, 2024.
+
+\bibitem[Li et~al.(2025{\natexlab{a}})Li, Fan, He, Wang, Chen, Zhang, and Tan]{law}
+Li, Y., Fan, L., He, J., Wang, Y., Chen, Y., Zhang, Z., and Tan, T.
+\newblock Enhancing end-to-end autonomous driving with latent world model.
+\newblock In \emph{ICLR}, 2025{\natexlab{a}}.
+
+\bibitem[Li et~al.(2025{\natexlab{b}})Li, Wang, Liu, He, Fan, and Zhang]{wote}
+Li, Y., Wang, Y., Liu, Y., He, J., Fan, L., and Zhang, Z.
+\newblock End-to-end driving with online trajectory evaluation via bev world model.
+\newblock In \emph{ICCV}, 2025{\natexlab{b}}.
+
+\bibitem[Li et~al.(2025{\natexlab{c}})Li, Xiong, Guo, Li, Yan, Xu, Zhou, Chen, Sun, Wang, et~al.]{li2025recogdrive}
+Li, Y., Xiong, K., Guo, X., Li, F., Yan, S., Xu, G., Zhou, L., Chen, L., Sun, H., Wang, B., et~al.
+\newblock Recogdrive: A reinforced cognitive framework for end-to-end autonomous driving.
+\newblock \emph{arXiv preprint arXiv:2506.08052}, 2025{\natexlab{c}}.
+
+\bibitem[Li et~al.(2024{\natexlab{a}})Li, Li, Wang, Lan, Yu, Ji, Li, Zhu, Kautz, Wu, et~al.]{li2024hydra}
+Li, Z., Li, K., Wang, S., Lan, S., Yu, Z., Ji, Y., Li, Z., Zhu, Z., Kautz, J., Wu, Z., et~al.
+\newblock Hydra-mdp: End-to-end multimodal planning with multi-target hydra-distillation.
+\newblock \emph{arXiv preprint arXiv:2406.06978}, 2024{\natexlab{a}}.
+
+\bibitem[Li et~al.(2024{\natexlab{b}})Li, Wang, Li, Xie, Sima, Lu, Yu, and Dai]{li2024bevformer}
+Li, Z., Wang, W., Li, H., Xie, E., Sima, C., Lu, T., Yu, Q., and Dai, J.
+\newblock Bevformer: learning bird's-eye-view representation from lidar-camera via spatiotemporal transformers.
+\newblock \emph{TPAMI}, 2024{\natexlab{b}}.
+
+\bibitem[Liang et~al.(2022)Liang, Xie, Yu, Xia, Lin, Wang, Tang, Wang, and Tang]{liang2022bevfusion}
+Liang, T., Xie, H., Yu, K., Xia, Z., Lin, Z., Wang, Y., Tang, T., Wang, B., and Tang, Z.
+\newblock Bevfusion: A simple and robust lidar-camera fusion framework.
+\newblock In \emph{NeurIPS}, 2022.
+
+\bibitem[Liao et~al.(2025)Liao, Chen, Yin, Jiang, Wang, Yan, Zhang, Li, Zhang, Zhang, et~al.]{liao2025diffusiondrive}
+Liao, B., Chen, S., Yin, H., Jiang, B., Wang, C., Yan, S., Zhang, X., Li, X., Zhang, Y., Zhang, Q., et~al.
+\newblock Diffusiondrive: Truncated diffusion model for end-to-end autonomous driving.
+\newblock In \emph{CVPR}, 2025.
+
+\bibitem[Liu et~al.(2025)Liu, Liang, Li, Li, and Huang]{liu2025gaussianfusion}
+Liu, S., Liang, Q., Li, Z., Li, B., and Huang, K.
+\newblock Gaussianfusion: Gaussian-based multi-sensor fusion for end-to-end autonomous driving.
+\newblock In \emph{NeurIPS}, 2025.
+
+\bibitem[Liu et~al.(2022)Liu, Wang, Zhang, and Sun]{liu2022petr}
+Liu, Y., Wang, T., Zhang, X., and Sun, J.
+\newblock Petr: Position embedding transformation for multi-view 3d object detection.
+\newblock In \emph{ECCV}, 2022.
+
+\bibitem[Novotny et~al.(2018)Novotny, Larlus, and Vedaldi]{novotny2018capturing}
+Novotny, D., Larlus, D., and Vedaldi, A.
+\newblock Capturing the geometry of object categories from video supervision.
+\newblock \emph{TPAMI}, 2018.
+
+\bibitem[Prakash et~al.(2021)Prakash, Chitta, and Geiger]{transfuser}
+Prakash, A., Chitta, K., and Geiger, A.
+\newblock Multi-modal fusion transformer for end-to-end autonomous driving.
+\newblock In \emph{CVPR}, 2021.
+
+\bibitem[Russell et~al.(2025)Russell, Hu, Bertoni, Fedoseev, Shotton, Arani, and Corrado]{RussellGAIA22025}
+Russell, L., Hu, A., Bertoni, L., Fedoseev, G., Shotton, J., Arani, E., and Corrado, G.
+\newblock Gaia-2: A controllable multi-view generative world model for autonomous driving.
+\newblock \emph{arXiv preprint arXiv:2503.20523}, 2025.
+
+\bibitem[Shi et~al.(2025)Shi, Shi, Sheng, Zhang, and Jiang]{shi2025drivex}
+Shi, C., Shi, S., Sheng, K., Zhang, B., and Jiang, L.
+\newblock Drivex: Omni scene modeling for learning generalizable world knowledge in autonomous driving.
+\newblock In \emph{ICCV}, 2025.
+
+\bibitem[Siméoni et~al.(2025)Siméoni, Vo, Seitzer, Baldassarre, Oquab, Jose, Khalidov, Szafraniec, Yi, Ramamonjisoa, Massa, Haziza, Wehrstedt, Wang, Darcet, Moutakanni, Sentana, Roberts, Vedaldi, Tolan, Brandt, Couprie, Mairal, Jégou, Labatut, and Bojanowski]{dinov3}
+Siméoni, O., Vo, H.~V., Seitzer, M., Baldassarre, F., Oquab, M., Jose, C., Khalidov, V., Szafraniec, M., Yi, S., Ramamonjisoa, M., Massa, F., Haziza, D., Wehrstedt, L., Wang, J., Darcet, T., Moutakanni, T., Sentana, L., Roberts, C., Vedaldi, A., Tolan, J., Brandt, J., Couprie, C., Mairal, J., Jégou, H., Labatut, P., and Bojanowski, P.
+\newblock Dinov3.
+\newblock \emph{arXiv preprint arXiv: 2508.10104}, 2025.
+
+\bibitem[Song et~al.(2025)Song, Jia, Liu, Pan, Zhang, Wang, Zhang, Xu, Yang, and Luo]{song2025don}
+Song, Z., Jia, C., Liu, L., Pan, H., Zhang, Y., Wang, J., Zhang, X., Xu, S., Yang, L., and Luo, Y.
+\newblock Don't shake the wheel: Momentum-aware planning in end-to-end autonomous driving.
+\newblock In \emph{CVPR}, 2025.
+
+\bibitem[Wang \& Agapito(2025)Wang and Agapito]{wang20253d}
+Wang, H. and Agapito, L.
+\newblock 3d reconstruction with spatial memory.
+\newblock In \emph{3DV}, 2025.
+
+\bibitem[Wang et~al.(2025)Wang, Chen, Karaev, Vedaldi, Rupprecht, and Novotny]{vggt}
+Wang, J., Chen, M., Karaev, N., Vedaldi, A., Rupprecht, C., and Novotny, D.
+\newblock Vggt: Visual geometry grounded transformer.
+\newblock In \emph{CVPR}, 2025.
+
+\bibitem[Wang et~al.(2024)Wang, Leroy, Cabon, Chidlovskii, and Revaud]{wang2024dust3r}
+Wang, S., Leroy, V., Cabon, Y., Chidlovskii, B., and Revaud, J.
+\newblock Dust3r: Geometric 3d vision made easy.
+\newblock In \emph{CVPR}, 2024.
+
+\bibitem[Wang et~al.(2022)Wang, Guizilini, Zhang, Wang, Zhao, and Solomon]{wang2022detr3d}
+Wang, Y., Guizilini, V.~C., Zhang, T., Wang, Y., Zhao, H., and Solomon, J.
+\newblock Detr3d: 3d object detection from multi-view images via 3d-to-2d queries.
+\newblock In \emph{CoRL}, 2022.
+
+\bibitem[Xing et~al.(2025)Xing, Zhang, Hu, Jiang, He, Zhang, Long, and Yin]{xing2025goalflow}
+Xing, Z., Zhang, X., Hu, Y., Jiang, B., He, T., Zhang, Q., Long, X., and Yin, W.
+\newblock Goalflow: Goal-driven flow matching for multimodal trajectories generation in end-to-end autonomous driving.
+\newblock In \emph{CVPR}, 2025.
+
+\bibitem[Zhang et~al.(2025)Zhang, Tang, Hu, Pan, Guo, Liu, Huang, Yuan, Zhang, Long, Cao, and Yin]{epona}
+Zhang, K., Tang, Z., Hu, X., Pan, X., Guo, X., Liu, Y., Huang, J., Yuan, L., Zhang, Q., Long, X., Cao, X., and Yin, W.
+\newblock Epona: Autoregressive diffusion world model for autonomous driving.
+\newblock In \emph{ICCV}, 2025.
+
+\bibitem[Zhang et~al.(2018)Zhang, Isola, Efros, Shechtman, and Wang]{lpips}
+Zhang, R., Isola, P., Efros, A.~A., Shechtman, E., and Wang, O.
+\newblock The unreasonable effectiveness of deep features as a perceptual metric.
+\newblock In \emph{CVPR}, 2018.
+
+\bibitem[Zhao et~al.(2017)Zhao, Song, and Ermon]{zhao2017infovae}
+Zhao, S., Song, J., and Ermon, S.
+\newblock Infovae: Information maximizing variational autoencoders.
+\newblock \emph{arXiv preprint arXiv:1706.02262}, 2017.
+
+\bibitem[Zheng et~al.(2025{\natexlab{a}})Zheng, Ma, Tong, and Xie]{rae}
+Zheng, B., Ma, N., Tong, S., and Xie, S.
+\newblock Diffusion transformers with representation autoencoders.
+\newblock \emph{arXiv preprint arXiv:2510.11690}, 2025{\natexlab{a}}.
+
+\bibitem[Zheng et~al.(2025{\natexlab{b}})Zheng, Yang, Xing, Zhang, Zheng, Gao, Li, Zhang, Xia, Jia, et~al.]{zheng2025world4drive}
+Zheng, Y., Yang, P., Xing, Z., Zhang, Q., Zheng, Y., Gao, Y., Li, P., Zhang, T., Xia, Z., Jia, P., et~al.
+\newblock World4drive: End-to-end autonomous driving via intention-aware physical latent world model.
+\newblock In \emph{ICCV}, 2025{\natexlab{b}}.
+
+\end{thebibliography}

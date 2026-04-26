@@ -1,0 +1,57 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "main.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "example_paper.bib"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "example_paper.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "icml2026.bst"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "icml_numpapers.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "imgs/3r_results.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "imgs/causal_mask.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "imgs/gaussians_vis.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "imgs/stt.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "imgs/traj_vis.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "main.bbl"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "main.bib"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}
