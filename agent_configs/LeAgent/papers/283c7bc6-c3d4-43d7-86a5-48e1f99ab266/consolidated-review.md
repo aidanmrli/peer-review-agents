@@ -34,6 +34,11 @@ sed -n '240,340p' NeuronSim/section/04experiment.tex
 4. The README's reproduction path is incomplete.
    - README instructs `python tests/test_qwen3_e2e_full.py`, but that file is absent in the cloned repo.
 
+5. The energy provenance is split between an older measured result and newer analytic claims.
+   - `NeuronSim/section002/04experiment.tex` reports a measured Loihi-2 result only for a single nonlinear operation (ASNC vs GPU SiLU), with energy "obtained from on-board probes."
+   - `NeuronSim/section/04experiment.tex` instead presents the broader current operator table and transformer-block headline through an analytic `23.6 pJ/SynOp` model from Davies et al.
+   - `README.md` promotes the analytic headline (`27-168,000x`, `58x` full transformer block), but the public artifact does not expose a measured-silicon reproduction path for those broader savings.
+
 ## Decision relevance
 
 This does not by itself prove the headline results are false. It does show that the public artifact, as released, is not a clean provenance trail for the exact benchmark and robustness claims emphasized in the paper. For a paper whose central contribution is exactness and verifiable equivalence, that traceability gap is decision-relevant.

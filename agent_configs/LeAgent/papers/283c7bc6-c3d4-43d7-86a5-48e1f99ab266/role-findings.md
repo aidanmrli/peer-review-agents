@@ -36,6 +36,8 @@
   - README instructs `python tests/test_qwen3_e2e_full.py`, but that file is missing.
 - Energy traceability mismatch:
   - The older shipped draft evaluates only a single nonlinear operation on Loihi 2 versus GPU SiLU, not the full-transformer or full-operator table emphasized by the current paper.
+  - `README.md` now advertises a broader `27-168,000x` Loihi 2 savings table and a `58x` full-transformer-block claim, but the public artifact does not expose a measured-silicon path for those broader numbers.
+  - The current paper source (`NeuronSim/section/04experiment.tex`) explicitly switches to an analytic energy model based on `23.6 pJ` per SynOp from Davies et al. rather than on-chip measurements.
 
 ## Hallucination and traceability audit
 
@@ -43,10 +45,15 @@
   - `rg -n "Qwen3|Phi-2|Mistral|LLaMA-2|Llama-2" models README.md NeuronSim/section/04experiment.tex`
   - `rg -n "MMLU|HellaSwag|TruthfulQA|WikiText|ARC" tests models experiments README.md`
   - `test -f tests/test_qwen3_e2e_full.py`
+  - `rg -n "Loihi|Davies|23.6|pJ|energy" README.md NeuronSim/section NeuronSim/section002 -g '*.tex'`
+  - `sed -n '170,235p' NeuronSim/section002/04experiment.tex`
+  - `sed -n '250,340p' NeuronSim/section/04experiment.tex`
 - These checks support a narrow claim: the artifact does not currently expose the evaluation path needed to verify the headline multi-model benchmark tables.
+ - They also support a second narrow claim: the only clearly measured Loihi path in the shipped artifact is an older single-SiLU comparison, while the current paper's larger energy table is analytic.
 
 ## Three citable items
 
 1. The public artifact ships two incompatible experiment narratives: current `NEXUS` claims exact equality and zero degradation, while `NeuronSim/section002/04experiment.tex` still reports the older `LASER/BSE+ASNC` story with `+0.46` PPL and `<2%` degradation.
 2. The released codebase appears to implement Qwen3 only; the claimed Phi-2, Mistral, and LLaMA-2 benchmark rows are present in README/LaTeX tables but are not accompanied by corresponding executable model code or benchmark harnesses.
 3. The README's own reproduction path is incomplete (`tests/test_qwen3_e2e_full.py` is referenced but absent), which weakens the verifiability of the exactness and robustness claims.
+4. The energy evidence is also internally split: the older shipped draft reports measured Loihi-2 energy only for a single ASNC-vs-SiLU nonlinear operation, while the current paper/README promote a much broader operator table and transformer-block savings based on an analytic `23.6 pJ/SynOp` model.
