@@ -15,8 +15,11 @@
 
 ## Literature contradiction audit
 
-- No external literature was needed for the main contradiction. This is an internal artifact-traceability issue.
-- Prior-work search was not the bottleneck here; the bottleneck is that the public artifact does not cleanly support the paper's own exact benchmark claims.
+- The current source sharpens the novelty issue from "possibly uncited" to "cited but still overclaimed."
+- `example_paper.bib` includes `Bu et al. 2023` (`arXiv:2303.04347`) and `SpikeZIP-TF` (`arXiv:2406.03470`).
+- `section/02relatedwork.tex:21` still says existing methods, including `SpikeZIP/SpikeZIP-TF`, "treat encoding as a statistical approximation of continuous values."
+- `example_paper.tex:147` keeps the stronger universal abstract claim that "all existing approaches sacrifice accuracy."
+- So the contradiction is not just bibliography omission; it is that the manuscript cites at least part of the prior line while still collapsing it into the same approximate-only framing.
 
 ## Logic/proof audit
 
@@ -48,12 +51,16 @@
   - `rg -n "Loihi|Davies|23.6|pJ|energy" README.md NeuronSim/section NeuronSim/section002 -g '*.tex'`
   - `sed -n '170,235p' NeuronSim/section002/04experiment.tex`
   - `sed -n '250,340p' NeuronSim/section/04experiment.tex`
+- Additional source checks for the novelty-framing contradiction:
+  - `rg -n "2303.04347|2406.03470|SpikeZIP|all existing approaches sacrifice accuracy" src`
+  - `nl -ba section/02relatedwork.tex | sed -n '20,25p'`
+  - `nl -ba example_paper.tex | sed -n '146,147p'`
 - These checks support a narrow claim: the artifact does not currently expose the evaluation path needed to verify the headline multi-model benchmark tables.
- - They also support a second narrow claim: the only clearly measured Loihi path in the shipped artifact is an older single-SiLU comparison, while the current paper's larger energy table is analytic.
+- They also support a second narrow claim: the only clearly measured Loihi path in the shipped artifact is an older single-SiLU comparison, while the current paper's larger energy table is analytic.
+- And they support a third narrow claim: the paper's own source cites at least some prior conversion papers while still describing the whole prior regime as approximate-only.
 
 ## Three citable items
 
 1. The public artifact ships two incompatible experiment narratives: current `NEXUS` claims exact equality and zero degradation, while `NeuronSim/section002/04experiment.tex` still reports the older `LASER/BSE+ASNC` story with `+0.46` PPL and `<2%` degradation.
-2. The released codebase appears to implement Qwen3 only; the claimed Phi-2, Mistral, and LLaMA-2 benchmark rows are present in README/LaTeX tables but are not accompanied by corresponding executable model code or benchmark harnesses.
-3. The README's own reproduction path is incomplete (`tests/test_qwen3_e2e_full.py` is referenced but absent), which weakens the verifiability of the exactness and robustness claims.
-4. The energy evidence is also internally split: the older shipped draft reports measured Loihi-2 energy only for a single ASNC-vs-SiLU nonlinear operation, while the current paper/README promote a much broader operator table and transformer-block savings based on an analytic `23.6 pJ/SynOp` model.
+2. The traceability path for the headline exactness claims is incomplete: the repo appears Qwen3-focused, the claimed Phi-2/Mistral/LLaMA-2 benchmark rows lack exposed executable harnesses, and the README points to a missing `tests/test_qwen3_e2e_full.py`.
+3. The novelty framing remains over-strong in the paper's own source: `Bu 2023` and `SpikeZIP-TF 2024` are present in the bibliography, and `SpikeZIP-TF` is cited in related work, yet `example_paper.tex:147` still says "all existing approaches sacrifice accuracy" and `section/02relatedwork.tex:21` still characterizes those methods as approximate-only.
