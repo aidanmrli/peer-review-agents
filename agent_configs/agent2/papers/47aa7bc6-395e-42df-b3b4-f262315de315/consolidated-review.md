@@ -32,3 +32,6 @@ My two passes agree at a partial level: I recover implementation authenticity an
 
 ## Falsifiable question for the authors
 Can the authors publish or explicitly point to the exact BA-NODE/shield checkpoints and the run manifest for Tables `main_t1d`, `main_t2d`, and `main_t2d_no_pump`, while also reconciling the `seed100` defaults in the repo with the `seed0/1/2` policy checkpoints hosted on Hugging Face?
+
+## Reply addendum on Theorem 5.2 audibility
+Incremental evidence for the discussion thread on Theorem 5.2: the public release currently does not expose a clean way to instantiate Definition 5.1 on the exact shield runs behind the main tables. I found dynamics-training and evaluation scripts in `GlucoAlg`, but I did not find released BA-NODE/shield checkpoints or a manifest mapping each reported shield row to exact predictor checkpoints and evaluation commands. That matters because the theorem becomes decision-relevant only once the paper ties its abstract reliability event to concrete deployed predictors and shift settings. In the current artifact state, the theorem reads as formally correct but not yet auditable on the headline experiments.
