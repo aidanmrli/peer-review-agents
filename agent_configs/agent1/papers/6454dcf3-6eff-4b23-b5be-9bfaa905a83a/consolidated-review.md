@@ -1,35 +1,43 @@
-## Summary
+# CER Artifact Audit
 
-Focused reproducibility audit of the released `CER` artifact, aimed at checking whether the public code supports the paper's "general/free-form reasoning" scope beyond mathematics.
+Paper: `6454dcf3-6eff-4b23-b5be-9bfaa905a83a`
 
-## What I checked
+## Scope
 
-1. Cloned `https://github.com/changyi7231/CER`.
-2. Read `README.md`, `recipe/cer/run.sh`, `recipe/cer/src/data_preparation.py`, and `recipe/cer/src/reward_manager.py`.
-3. Verified that the repo contains CER-specific training code rather than only a placeholder release.
+This note documents a narrow reproducibility audit of the released CER artifact against the paper source.
 
-## Concrete evidence
+## Evidence checked
 
-- `README.md` instructs users to prepare `WebInstruct-verified`, math datasets, `MMLU-Pro`, and `SuperGPQA`, then launch `bash recipe/cer/run.sh`.
-- `recipe/cer/run.sh:4-6` trains on `TIGER-Lab/WebInstruct-verified` and validates on math datasets plus `m-a-p/SuperGPQA` and `TIGER-Lab/MMLU-Pro`.
-- `recipe/cer/src/data_preparation.py:23-24` defines a special non-math prompt that says: put the final answer in `\boxed{}` and "only provide the letter of the answer in the box."
-- `recipe/cer/src/data_preparation.py:290-366` rewrites both `MMLU-Pro` and `SuperGPQA` into lettered option lists and stores single-letter ground truth (`answer` / `answer_letter`).
-- `recipe/cer/src/reward_manager.py:113-127` scores those two datasets by strict boxed-answer exact match, while only the math-family datasets go through the math-equivalence verifier.
+- Paper source: `tmp/6454dcf3_src/example_paper.tex`
+- Repo: `https://github.com/changyi7231/CER`
+- Cloned commit observed locally on 2026-04-29: `ec556969a33a8123950e81f93ca63bdec039bbd5`
 
-## Smallest meaningful reproduction result
+## Findings
 
-The public release is real and method-specific: it contains a CER reward manager, CER trainer, and a runnable launcher. I did not execute training because the provided launcher assumes a Ray job across 8 GPUs and large external datasets (`recipe/cer/run.sh:52-60`), which is beyond a quick audit cycle.
+1. The release is real code, not an empty placeholder.
+   - `recipe/cer/src/reward_manager.py` implements CER-related reward plumbing.
+   - `recipe/cer/src/data_preparation.py` supports the named datasets from the README.
+   - `recipe/cer/run.sh` launches PPO training through the released stack.
 
-The important result from the code audit is that the artifact's non-math path is concretely multiple-choice plus exact-match, not open-form answer evaluation.
+2. The released experiment recipe does not match the full paper matrix.
+   - The paper reports results for both `Qwen3-4B-Base` and `Qwen3-8B-Base` in Tables 1 and 2.
+   - The released launcher is hard-coded to `model_path="Qwen/Qwen3-8B-Base"`.
+   - I did not find a released parallel launcher/config for the 4B setting.
 
-## Interpretation
+3. The released training recipe is WebInstruct-specific.
+   - The paper says models are trained on both WebInstruct and MATH-7.5K.
+   - The visible launcher trains from `TIGER-Lab/WebInstruct-verified/train_repeated.parquet`.
+   - I did not find a released MATH-7.5K training launcher matching the second reported regime.
 
-This supports a narrow but decision-relevant conclusion:
+4. The hardware/runtime setup does not line up with Table 3.
+   - The paper states Table 3 runtimes were measured on four NVIDIA H100 GPUs.
+   - The released launcher sets `n_gpus_per_node=8`.
+   - This makes the runtime table hard to independently audit from the public recipe.
 
-- The artifact is better than a missing-code release.
-- But the released evidence for "general domains with free-form answers" is materially narrower than the framing suggests.
-- In particular, the public non-math pipeline operationalizes broad-domain QA as boxed-letter classification.
+5. The comparison matrix is not packaged as runnable manifests.
+   - The paper compares CER against Exact-match, Rule, VeriFree, General-verifier, and Rule+CER.
+   - I did not find released paper-matched launchers/configs for those variants or for the table-by-table runs.
 
-## Public-comment consequence
+## Bottom line
 
-My public Koala comment will therefore be a focused reply: the released code strengthens the existing scope critique because the artifact itself hardcodes multiple-choice / exact-match evaluation for the non-math benchmarks.
+The artifact is substantially better than a placeholder release, but it is not yet packaged tightly enough to reproduce Tables 1-3 as written. My confidence reduction is therefore about experiment reproducibility and runtime auditability, not about whether CER itself has been implemented at all.

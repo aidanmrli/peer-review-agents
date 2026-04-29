@@ -1,32 +1,45 @@
+# CER Reproducibility Findings
+
 ## Central claim and reproduction target
 
-CER claims to extend RL-with-verification beyond rule-verifiable math by using the model's conditional likelihood of the reference answer as a soft reward for broader free-form reasoning. My target was the released artifact's support for that scope claim, especially the non-math pipeline.
+The paper claims CER is a practical reward mechanism that improves RL training across both WebInstruct and MATH-7.5K, for both Qwen3-4B-Base and Qwen3-8B-Base, with runtime comparisons in Table 3 reported on four NVIDIA H100 GPUs.
 
 ## Paper and artifact evidence checked
 
-- Cloned `https://github.com/changyi7231/CER` on 2026-04-28.
-- Read `README.md`, which points to `recipe/cer/run.sh` and `recipe/cer/src/data_preparation.py`.
-- Inspected `recipe/cer/src/data_preparation.py:23-24,75-76,79-118,290-366`.
-- Inspected `recipe/cer/src/reward_manager.py:113-127`.
-- Inspected `recipe/cer/run.sh:4-6,39-44`.
+- Paper source: `tmp/6454dcf3_src/example_paper.tex`
+- Repo clone: `tmp/cer_repo`
+- Key files inspected:
+  - `tmp/cer_repo/README.md`
+  - `tmp/cer_repo/recipe/cer/run.sh`
+  - `tmp/cer_repo/recipe/cer/src/reward_manager.py`
+  - `tmp/cer_repo/recipe/cer/src/data_preparation.py`
 
-## Reproducibility result from the smallest meaningful check actually run
+## Reproducibility result from the smallest meaningful check
 
-I verified that the public repo is a real CER release rather than an empty placeholder: it contains a runnable training scaffold (`recipe/cer/run.sh`) and CER-specific trainer/reward code (`recipe/cer/src/main_ppo.py`, `recipe/cer/src/cer_ray_trainer.py`, `recipe/cer/src/reward_manager.py`).
+I verified that the release does include core CER code rather than a placeholder: the repo contains CER-specific reward code and data-preparation scripts, and `run.sh` launches PPO training through the released pipeline.
 
-I did not execute training because the provided launcher assumes an 8-GPU Ray job (`recipe/cer/run.sh:52-60`) and large external datasets. The smallest meaningful audit was therefore a code-path inspection of the released non-math data/evaluation pipeline.
+However, the released recipe is not paper-complete:
+
+- `recipe/cer/run.sh` is hard-coded to `Qwen/Qwen3-8B-Base`, not the paper's full 4B+8B matrix.
+- The only released training launcher uses `TIGER-Lab/WebInstruct-verified/train_repeated.parquet`; I did not find a released MATH-7.5K training launcher matching the paper's second training regime.
+- The released launcher sets `n_gpus_per_node=8`, while the paper says Table 3 runtimes were measured on four H100 GPUs.
+- I did not find released experiment manifests for the reported Exact-match / Rule / VeriFree / General-verifier / Rule+CER comparisons in Tables 1-3.
 
 ## Implementation or correctness risks
 
-- The artifact materially narrows the paper's "general/free-form" evidence. `run.sh` trains on `TIGER-Lab/WebInstruct-verified` and validates only on math sets plus `SuperGPQA` and `MMLU-Pro` (`recipe/cer/run.sh:4-6`).
-- The two non-math sets are converted into boxed-letter multiple-choice prompts, not open-form answers: `qwen_multi_choice_prompt` explicitly says "Please only provide the letter of the answer in the box" (`data_preparation.py:23-24`), and both `MMLU-Pro` and `SuperGPQA` are rewritten into option lists with letter labels and single-letter ground truth (`data_preparation.py:290-366`).
-- The corresponding scorer for those datasets is strict exact match on the extracted boxed answer, not a free-form semantic reward (`reward_manager.py:113-127`).
-- So the released code supports the criticism that the non-math evidence is really broad-domain multiple-choice QA with exact-match evaluation, not a direct demonstration on open-form tasks with many valid surface realizations.
+- The artifact supports "CER exists in code" but not "the reported tables can be rerun from released configs."
+- Hardware and training-regime mismatches make the runtime table especially hard to audit.
+- The release currently exposes one main CER recipe rather than a paper-matched suite of experiment manifests.
 
-## Novelty or framing context
+## Novelty/framing context
 
-This does not refute CER's value as a soft reward inside training. It does narrow what the released evidence currently substantiates: the repo demonstrates a CER implementation, but its public non-math evaluation path is much closer to multiple-choice answer selection than to the headline "general domains with free-form answers" framing.
+This is not a claim that the method is unreleased. It is a narrower reproducibility calibration: the code is materially present, but the experiment packaging is incomplete relative to the paper's reported comparison matrix.
 
 ## Decision impact
 
-This pushes me toward a weaker score unless the authors either soften the scope claim or provide an open-form non-math evaluation/release path. For reproducibility, the artifact is better than "missing code," but it presently reinforces a scope overclaim rather than resolving it.
+I would treat this as a confidence reduction on empirical reproducibility, not a refutation of CER's underlying idea. A stronger release would include paper-matched launchers/configs for:
+
+- WebInstruct and MATH-7.5K
+- Qwen3-4B and Qwen3-8B
+- the verifier baselines and Rule+CER combination
+- the four-H100 runtime setup used for Table 3
